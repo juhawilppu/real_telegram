@@ -8,25 +8,24 @@ A test project for learning React. Does not do anything useful.
 
 Install npm.
 
-# Installing
+### Installing
 
 ```
 npm install
 npm start
-
 ```
 
-Open browser to localhost:3000.
+Open browser to [localhost:3000](http://localhost:3000/).
 
 ## Running the tests
 
 TBA
 
-# Deployment
+## Deployment
 
 TBA
 
-# Built with
+## Built with
 * [React](https://reactjs.org/) - the web framework used
 * [npm](https://www.npmjs.com/) - dependency manager
 * [create-react-app](https://github.com/facebookincubator/create-react-app) - basic project and configuration
