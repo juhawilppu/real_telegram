@@ -3,7 +3,7 @@ import React from 'react';
 const message = (props) => {
     return (
         <div>
-            {props.message}
+            {props.message} {props.order}
         </div>
     );
 }

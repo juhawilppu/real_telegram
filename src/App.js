@@ -4,20 +4,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      rows: []
-    }
+  state = {
+    message: "Message",
+    order: 0
+  }
+
+  messageHandler = () => {
+    this.setState({order: this.state.order + 1});
   }
 
   render() {
-
-    function message(e) {
-      e.preventDefault();
-      console.log('The link was clicked.');
-    }
-
     return (
       <div className="App">
         <header className="App-header">
@@ -28,11 +24,11 @@ class App extends Component {
           Click on the button to send a message.
         </p>
 
-        <button onClick={message}>Morse</button>
+        <button onClick={this.messageHandler}>Morse</button>
 
         <div>
           <p>Received messages</p>
-          <Message message="Juha" />
+          <Message message={this.state.message} order={this.state.order} />
         </div>
 
       </div>
