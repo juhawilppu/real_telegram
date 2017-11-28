@@ -5,7 +5,11 @@ import './App.css';
 
 class App extends Component {
   state = {
-    message: "Message",
+    messages: [
+      {message: "Hello", from: "Juha"},
+      {message: "Yo dawg", from: "Janne"},
+      {message: "Hello", from: "Juha"}
+    ],
     order: 0
   }
 
@@ -28,7 +32,9 @@ class App extends Component {
 
         <div>
           <p>Received messages</p>
-          <Message message={this.state.message} order={this.state.order} />
+          {this.state.messages.map((message, index) => {
+              return <Message message={message.message} from={message.from} order={this.state.order} />
+          })}
         </div>
 
       </div>
