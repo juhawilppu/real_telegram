@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Message from './Message/Message';
+import MessageInput from './MessageInput/MessageInput';
 import logo from './logo.svg';
 import './App.css';
 
@@ -23,7 +24,19 @@ class App extends Component {
     this.setState({messages: messages});
   }
 
+  send = () => {
+
+  }
+
   render() {
+
+    const classes = [];
+
+    if (this.state.messages.length === 0) {
+      classes.push('red');
+    }
+
+
     return (
       <div className="App">
         <header className="App-header">
@@ -37,7 +50,7 @@ class App extends Component {
         <button onClick={this.messageHandler}>Morse</button>
 
         <div>
-          <p>Received messages</p>
+          <p className={classes.join(' ')}>Received messages</p>
           {this.state.messages.map((message, index) => {
               return <Message
               key={message.id}
@@ -47,6 +60,13 @@ class App extends Component {
               click={() => this.deleteMessage(index)}
               />
           })}
+        </div>
+
+        <div>
+          <p>Input new message</p>
+          <MessageInput
+            send={this.send}
+          />
         </div>
 
       </div>
