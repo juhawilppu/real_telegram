@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   deleteMessage = (messageIndex) => {
-    const messages = this.state.messages;
+    const messages = [...this.state.messages];
     messages.splice(messageIndex, 1);
     this.setState({messages: messages});
   }
