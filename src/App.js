@@ -15,7 +15,9 @@ class App extends Component {
   }
 
   messageHandler = () => {
-    this.setState({order: this.state.order + 1});
+    this.setState((prevState, props) => {
+      return {order: prevState.order + 1}
+    });
   }
 
   deleteMessage = (messageIndex) => {
