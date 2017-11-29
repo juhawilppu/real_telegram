@@ -1,12 +1,28 @@
-import React from 'react';
+import React , { Component } from 'react';
+import PropTypes from 'prop-types';
 import addClass from '../hoc/addClass';
 
-const messageInput = (props) => {
-    return (
-        <div>
-            <input type="text" /> <button onClick={props.send}>Send</button>
-        </div>
-    );
+class MessageInput extends Component {
+
+    componentDidMount() {
+        this.inputElement.focus();
+    }
+
+    render() {
+        return (
+            <div>
+                <input
+                    ref={ (inp) => {this.inputElement = inp} }
+                    type="text" />
+                <button onClick={this.props.send}>Send</button>
+            </div>
+        );
+    }
 }
 
-export default addClass(messageInput, 'message-input-hoc');
+//  PropTypes do not work for functional components, but this is how they would look like...
+MessageInput.propTypes = {
+    send: PropTypes.string
+};
+
+export default addClass(MessageInput, 'message-input-hoc');
