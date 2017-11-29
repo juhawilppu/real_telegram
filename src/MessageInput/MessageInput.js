@@ -1,4 +1,5 @@
 import React from 'react';
+import addClass from '../hoc/addClass';
 
 const messageInput = (props) => {
     return (
@@ -8,4 +9,4 @@ const messageInput = (props) => {
     );
 }
 
-export default messageInput;
+export default addClass(messageInput, 'message-input-hoc');
