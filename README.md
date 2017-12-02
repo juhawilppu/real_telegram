@@ -29,5 +29,7 @@ TBA
 * [React](https://reactjs.org/) - the web framework used
 * [npm](https://www.npmjs.com/) - dependency manager
 * [create-react-app](https://github.com/facebookincubator/create-react-app) - basic project and configuration
+* [react-router](https://github.com/ReactTraining/react-routerp) - router
+* [Material-UI](http://www.material-ui.com/#/) - UI components
 * [Webpack](https://webpack.github.io/) - module bundler
 * [Babel](https://babeljs.io/) - JavaScript compiler
