@@ -1,11 +1,13 @@
 import React from 'react';
-import WithClass from '../hoc/WithClass';
+import FlatButton from 'material-ui/FlatButton';
+import ActionAndroid from 'material-ui/svg-icons/action/android';
+import {fullWhite} from 'material-ui/styles/colors';
 
 const message = (props) => {
     return (
-        <WithClass classes={'message'}>
-            {props.from}: {props.message} {props.order} <button onClick={props.click}>Delete</button>
-        </WithClass>
+        <div>
+            {props.from}: {props.message} {props.order} <FlatButton icon={<ActionAndroid />} onClick={props.click}>Delete</FlatButton>
+        </div>
     );
 }
 
