@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import TextField from 'material-ui/TextField';
 
 class MessageInput extends Component {
     state = {
@@ -12,7 +13,7 @@ class MessageInput extends Component {
     }
 
     componentDidMount() {
-        this.messageElement.focus();
+        //this.messageElement.focus();
     }
 
     send = () => {
@@ -26,34 +27,28 @@ class MessageInput extends Component {
         this.setState({name: event.target.value});
     }
 
-    handleContentChange = (event) => {
+    handleMessageChange = (event) => {
         this.setState({content: event.target.value});
     }
+
+    handleChange = (event, index, value) => this.setState({value});
 
     render() {
         return (
             <div>
-            <SelectField
-            floatingLabelText="Frequency"
-            value={this.state.value}
-            onChange={this.handleChange}
-            >
-            <MenuItem value={1} primaryText="Never" />
-            <MenuItem value={2} primaryText="Every Night" />
-            <MenuItem value={3} primaryText="Weeknights" />
-            <MenuItem value={4} primaryText="Weekends" />
-            <MenuItem value={5} primaryText="Weekly" />
-            </SelectField>
-                <p>Your name: <input
-                    ref={ (inp) => {this.nameElement = inp} }
-                    value={this.state.name} onChange={this.handleNameChange}
-                    type="text" />
-                </p> 
-                <p> Message: <input
-                    ref={ (inp) => {this.messageElement = inp} }
-                    value={this.state.content} onChange={this.handleContentChange}
-                    type="text" />
-                </p>
+                <TextField hintText="Your name" onChange={this.handleNameChange}/>
+                <TextField hintText="Message" onChange={this.handleMessageChange}/>
+                <SelectField
+                    floatingLabelText="Frequency"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    >
+                    <MenuItem value={1} primaryText="Never" />
+                    <MenuItem value={2} primaryText="Every Night" />
+                    <MenuItem value={3} primaryText="Weeknights" />
+                    <MenuItem value={4} primaryText="Weekends" />
+                    <MenuItem value={5} primaryText="Weekly" />
+                </SelectField>
                 <RaisedButton onClick={this.send}>Send</RaisedButton>
             </div>
         );

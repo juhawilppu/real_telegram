@@ -64,9 +64,6 @@ class App extends Component {
           <h1 className="App-title">Real Telegram</h1>
         </header>
         <p>Uri: {this.props.match.params.messageId}</p>
-        <p className="App-intro">
-          Click on the button to send a message.
-        </p>
 
         <div>
           <p className={classes.join(' ')}>Received messages</p>
