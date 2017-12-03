@@ -1,7 +1,6 @@
 import React from 'react';
 import FlatButton from 'material-ui/FlatButton';
 import ActionAndroid from 'material-ui/svg-icons/action/android';
-import {fullWhite} from 'material-ui/styles/colors';
 
 const message = (props) => {
     return (

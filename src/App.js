@@ -4,7 +4,6 @@ import { Route, BrowserRouter, Link } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBarExample from './AppBarExample';
 import BottomNavigationExample from './BottomNavigationExample';
-import { BottomNavigation } from 'material-ui/BottomNavigation';
 
 class App extends Component {
 

@@ -5,7 +5,6 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(request => {
-    console.log(request);
     // Edit request config
     return request;
 }, error => {
@@ -14,7 +13,6 @@ instance.interceptors.request.use(request => {
 });
 
 instance.interceptors.response.use(response => {
-    console.log(response);
     // Edit request config
     return response;
 }, error => {
