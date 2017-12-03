@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Messages from './Messages';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Link } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBarExample from './AppBarExample';
 import BottomNavigationExample from './BottomNavigationExample';
@@ -15,9 +15,9 @@ class App extends Component {
                     <div>
                         <AppBarExample />
                         <nav>
-                            <a href="/">Main</a>
-                            <a href="/test">Test</a>
-                            <a href="/more">More</a>
+                            <Link to="/">Main</Link>
+                            <Link to="/test">Test</Link>
+                            <Link to="/more">More</Link>
                         </nav>
 
                         <Route path="/" exact component={Messages} />
