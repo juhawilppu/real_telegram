@@ -20,6 +20,7 @@ class App extends Component {
                         </nav>
 
                         <Route path="/" exact component={Messages} />
+                        <Route path="/messages/:messageId" component={Messages} />
                         <Route path="/test" exact render={() => <div>test</div>} />
                         <Route path="/more" exact render={() => <div>more</div>} />
 

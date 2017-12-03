@@ -58,12 +58,12 @@ class App extends Component {
       classes.push('red');
     }
 
-
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Real Telegram</h1>
         </header>
+        <p>Uri: {this.props.match.params.messageId}</p>
         <p className="App-intro">
           Click on the button to send a message.
         </p>
