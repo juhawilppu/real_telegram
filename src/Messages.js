@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Message from './Message/Message';
 import MessageInput from './MessageInput/MessageInput';
 import axios from './components/firebase';
+import classes from './Messages.css';
 
 class App extends Component {
   state = {
@@ -15,7 +16,15 @@ class App extends Component {
 
         // create copy because otherwise we would modify current state
         const messages = [...this.state.messages];
-        messages.splice(messageId, 1);
+
+        let messageIndex = -1;
+        for (let i=0; i < messages.length; i++) {
+          if (messages[i].id === messageId) {
+            messageIndex = i;
+          }
+        }
+
+        messages.splice(messageIndex, 1);
         this.setState({messages: messages});
       }).catch(error => {
         console.log(error);
@@ -25,10 +34,8 @@ class App extends Component {
   send = (message) => {
     axios.post('/posts.json', message)
     .then(response => {
-      console.log(response);
       message.id = response.data.name;
       const messages = [...this.state.messages, message];
-      console.log('messages', messages);
       this.setState({messages: messages});
     })
     .catch(error => console.log(error));
@@ -51,39 +58,25 @@ class App extends Component {
   }
 
   render() {
-
-    const classes = [];
-
-    if (this.state.messages.length === 0) {
-      classes.push('red');
-    }
-
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Real Telegram</h1>
-        </header>
-        <p>Uri: {this.props.match.params.messageId}</p>
-
         <div>
-          <p className={classes.join(' ')}>Received messages</p>
+          <p className={classes.Header}>Received messages</p>
           {this.state.messages.map((message, index) => {
               return <Message
               key={message.id}
+              header={message.header}
               message={message.content}
-              from={message.sender}
+              sender={message.sender}
               order={this.state.order}
               click={() => this.deleteMessage(message.id)}
               />
           })}
         </div>
 
-        <div>
-          <p>Input new message</p>
-          <MessageInput
-            send={this.send}
-          />
-        </div>
+        <MessageInput
+          send={this.send}
+        />
 
       </div>
     );

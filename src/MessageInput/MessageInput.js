@@ -1,13 +1,14 @@
 import React , { Component } from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
-import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
+import classes from './MessageInput.css';
 
 class MessageInput extends Component {
     state = {
         name: '',
+        header: '',
         content: '',
         value: null
     }
@@ -19,12 +20,17 @@ class MessageInput extends Component {
     send = () => {
         this.props.send(
             {sender: this.state.name,
+            header: this.state.header,
             content: this.state.content});
         this.setState({content: ''});
     }
 
     handleNameChange = (event) => {
         this.setState({name: event.target.value});
+    }
+
+    handleHeaderChange = (event) => {
+        this.setState({header: event.target.value});
     }
 
     handleMessageChange = (event) => {
@@ -36,19 +42,12 @@ class MessageInput extends Component {
     render() {
         return (
             <div>
-                <TextField hintText="Your name" onChange={this.handleNameChange}/>
-                <TextField hintText="Message" onChange={this.handleMessageChange}/>
-                <SelectField
-                    floatingLabelText="Frequency"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    >
-                    <MenuItem value={1} primaryText="Never" />
-                    <MenuItem value={2} primaryText="Every Night" />
-                    <MenuItem value={3} primaryText="Weeknights" />
-                    <MenuItem value={4} primaryText="Weekends" />
-                    <MenuItem value={5} primaryText="Weekly" />
-                </SelectField>
+                <p className={classes.Header}>Input new message</p>
+                <div>
+                    <TextField hintText="Your name" onChange={this.handleNameChange}/>
+                    <TextField hintText="Header" onChange={this.handleHeaderChange}/>
+                    <TextField hintText="Message" onChange={this.handleMessageChange}/>
+                </div>
                 <RaisedButton onClick={this.send}>Send</RaisedButton>
             </div>
         );
