@@ -44,9 +44,9 @@ class MessageInput extends Component {
             <div>
                 <p className={classes.Header}>Input new message</p>
                 <div>
-                    <TextField hintText="Your name" onChange={this.handleNameChange}/>
-                    <TextField hintText="Header" onChange={this.handleHeaderChange}/>
-                    <TextField hintText="Message" onChange={this.handleMessageChange}/>
+                    <TextField hintText="" floatingLabelText="Name" onChange={this.handleNameChange}/><br />
+                    <TextField hintText="" floatingLabelText="Subject" onChange={this.handleHeaderChange}/><br />
+                    <TextField hintText="" floatingLabelText="Message" onChange={this.handleMessageChange} multiLine={true} rows={2}/>
                 </div>
                 <RaisedButton onClick={this.send}>Send</RaisedButton>
             </div>
