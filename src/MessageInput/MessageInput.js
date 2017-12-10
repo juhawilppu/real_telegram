@@ -25,19 +25,11 @@ class MessageInput extends Component {
         this.setState({content: ''});
     }
 
-    handleNameChange = (event) => {
-        this.setState({name: event.target.value});
-    }
+    handleNameChange = (event) => this.setState({name: event.target.value});
 
-    handleHeaderChange = (event) => {
-        this.setState({header: event.target.value});
-    }
+    handleHeaderChange = (event) => this.setState({header: event.target.value});
 
-    handleMessageChange = (event) => {
-        this.setState({content: event.target.value});
-    }
-
-    handleChange = (event, index, value) => this.setState({value});
+    handleMessageChange = (event) => this.setState({content: event.target.value});
 
     render() {
         return (
