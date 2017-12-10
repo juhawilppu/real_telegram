@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Messages from './Messages';
-import TestPage from './TestPage';
+import MorePage from './MorePage';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavBar from './NavBar';
@@ -15,8 +15,8 @@ class App extends Component {
                         <NavBar />
                         <Switch>
                             <Route path="/" exact component={Messages} />
-                            <Route path="/test" exact component={TestPage} />
-                            <Route path="/more" exact component={TestPage} />
+                            <Route path="/test" exact component={MorePage} />
+                            <Route path="/more" exact component={MorePage} />
                             <Route path="/:messageId" component={Messages} />
                         </Switch>
                     </div>

@@ -21,7 +21,9 @@ Open browser to [localhost:3000](http://localhost:3000/).
 
 ## Running the tests
 
-TBA
+```
+npm test
+```
 
 ## Deployment
 

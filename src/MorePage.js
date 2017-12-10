@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CircularProgress from 'material-ui/CircularProgress';
 
-class TestPages extends Component {
+class MorePage extends Component {
   state = {
   }
 
@@ -14,4 +14,4 @@ class TestPages extends Component {
   }
 }
 
-export default TestPage;
+export default MorePage;
