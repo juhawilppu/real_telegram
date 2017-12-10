@@ -8,13 +8,13 @@ A test project for learning React. Does not do anything useful.
 
 ### Prerequisites
 
-Install npm.
+Install yarn.
 
-### Installing
+### Installing and running
 
 ```
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 Open browser to [localhost:3000](http://localhost:3000/).
@@ -22,7 +22,7 @@ Open browser to [localhost:3000](http://localhost:3000/).
 ## Running the tests
 
 ```
-npm test
+yarn test
 ```
 
 ## Deployment
