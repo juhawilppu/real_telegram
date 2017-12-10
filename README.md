@@ -1,5 +1,7 @@
 # Real telegram
 
+[![Build Status](https://travis-ci.org/juhawilppu/real_telegram.svg?branch=master)](https://travis-ci.org/juhawilppu/real_telegram)
+
 A test project for learning React. Does not do anything useful.
 
 ## Getting Started
