@@ -13,7 +13,7 @@ instance.interceptors.request.use(request => {
 });
 
 instance.interceptors.response.use(response => {
-    // Edit request config
+    // Edit response config
     return response;
 }, error => {
     console.log(error);

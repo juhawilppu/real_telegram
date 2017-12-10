@@ -54,7 +54,6 @@ class MessageInput extends Component {
     }
 }
 
-//  PropTypes do not work for functional components, but this is how they would look like...
 MessageInput.propTypes = {
     send: PropTypes.func
 };

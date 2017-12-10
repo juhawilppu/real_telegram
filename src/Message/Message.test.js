@@ -8,7 +8,7 @@ configure({ adapter: new Adapter() });
 
 describe('<Message />', function () {
   it('should render without crashing', function () {
-    const wrapper = shallow(<Message/>);
+    const wrapper = shallow(<Message />);
     expect(wrapper).to.have.length(1);
   });
 
