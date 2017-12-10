@@ -8,11 +8,11 @@ const NavBar = () => (
   <Tabs>
     <Tab
       icon={<FontIcon className="material-icons">POSTS</FontIcon>}
-      label="POSTS"
+      label="Messages"
       containerElement={<Link to="/"/>}
     />
     <Tab
-      icon={<FontIcon className="material-icons">TESTS</FontIcon>}
+      icon={<FontIcon className="material-icons">TEST</FontIcon>}
       label="TEST"
       containerElement={<Link to="/test"/>}
     />
